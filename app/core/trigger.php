@@ -1,6 +1,6 @@
 <?php
   function loadPage() {
-    $controller = $_GET["controller"] ?? "home";
+    $controller = ($_GET["controller"] ?? "") ?: "home";
     $allowedPages = ["home", "page1", "page2"];
     
     if (!in_array($controller, $allowedPages, true)) {
