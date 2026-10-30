@@ -1,0 +1,16 @@
+# Security
+Options -Indexes
+
+<FilesMatch "^\.(htaccess|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+Header set X-Content-Type-Options "nosniff"
+
+# Routing
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
