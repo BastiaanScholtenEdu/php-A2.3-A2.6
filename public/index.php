@@ -12,6 +12,7 @@
       <a href="?controller=home">Home</a>
       <a href="?controller=page1">Page 1</a>
       <a href="?controller=page2">Page 2</a>
+      <a href="?controller=fruits">Fruits Database</a>
     </header>
     
 
