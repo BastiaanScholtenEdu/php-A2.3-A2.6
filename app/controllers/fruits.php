@@ -6,4 +6,15 @@
 ?>
 
 <h2>Fruits Database</h2>
-<pre><?php print_r($tables); ?></pre>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>color</th>
+    <th>sweetness</th>
+  </tr>
+  
+  <?php if (empty($tables)): ?>
+    <?= "<tr><td colspan='4'>Geen fuits gevonden</td></tr>"; ?>
+  <?php endif; ?>
+</table>
