@@ -13,9 +13,9 @@
     return $mysqli;
   }
 
-  function getFromQuery(mysqli $db, string $query) {
-    $result = $db -> query($query);
-    return $result -> fetch_all(MYSQLI_ASSOC);
+  function getFromQuery(mysqli $conn, string $query) {
+    $result = $conn -> query($query);
+    return $result;
   }
 
 ?>
