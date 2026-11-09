@@ -13,10 +13,11 @@ function fruits()
     while ($row = $result->fetch_assoc()) {
       $table .= "<tr><td>" . $row["id"] . "</td>" . "<td>" . $row["name"] . "</td>" . "<td>" . $row["color"] . "</td>" . "<td>" . $row["sweetness"] . "</td></tr>";
     }
+    $table .= "<tr><td colspan='4'>Aantal fruitsoorten: $length</td></tr>";
   } elseif (empty($table)) {
     $body = "<tr><td colspan='4'>Geen fuits gevonden</td></tr>";
   }
-  $body = $table . "<tr><td colspan='4'>Aantal fruitsoorten: $length</td></tr>";
+
 
   $result = "
     <h2>Fruits Database</h2>
@@ -27,7 +28,7 @@ function fruits()
         <th>color</th>
         <th>sweetness</th>
       </tr>
-      {$body}
+      {$table}
     </table>
   ";
   $conn->close();
