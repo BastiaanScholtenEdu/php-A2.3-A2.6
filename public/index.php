@@ -16,6 +16,6 @@
     </header>
     
 
-    <main><?php loadPage(); ?></main>
+    <main><?= loadPage(); ?></main>
   </body>
 </html>
