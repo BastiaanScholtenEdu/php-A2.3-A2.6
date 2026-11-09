@@ -1,7 +1,7 @@
 <?php
   function loadPage() {
     $controller = ($_GET["controller"] ?? "") ?: "home";
-    $allowedPages = ["home", "page1", "page2", "fruits"];
+    $allowedPages = ["home", "page1", "page2", "fruits", "fruits2"];
     
     if (!in_array($controller, $allowedPages, true)) {
       http_response_code(404);
@@ -10,5 +10,9 @@
     }
 
     include __DIR__ . "\..\controllers\\" . $controller . ".php";
+    
+    if (function_exists($controller)) {
+      return $controller();
+    }    
   }
 ?>
