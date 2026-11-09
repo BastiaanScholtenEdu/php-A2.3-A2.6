@@ -1,1 +1,5 @@
-<h2>Home page</h2>
+<?php
+  function home() {
+    return "<h2>Home page</h2>";
+  }
+?>
