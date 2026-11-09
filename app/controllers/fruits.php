@@ -5,7 +5,7 @@ function fruits()
   $conn = connDb(); // Initialize database
 
 
-  $result = getFromQuery($conn, "SELECT id, name, color, sweetness FROM fruits");
+  $result = getFromQuery($conn, "SELECT id, name, color, sweetness FROM fruits ORDER BY name ASC");
   $length = $result->num_rows;
   $table = "";
 
