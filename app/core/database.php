@@ -1,7 +1,7 @@
 <?php
-  require_once __DIR__ . "\EnvLoader.php";
+  require_once __DIR__ . "/EnvLoader.php";
 
-  EnvLoader::load(__DIR__ . "\..\\..\\.env");
+  EnvLoader::load(__DIR__ . "/../../.env");
   
   function connDb(): mysqli {
     $mysqli = new mysqli($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASS"], $_ENV["DB_NAME"]);

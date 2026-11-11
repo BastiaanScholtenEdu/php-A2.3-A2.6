@@ -9,7 +9,7 @@
       exit;
     }
 
-    include __DIR__ . "\..\controllers\\" . $controller . ".php";
+    include __DIR__ . "/../controllers/" . $controller . ".php";
     
     if (function_exists($controller)) {
       return $controller();
