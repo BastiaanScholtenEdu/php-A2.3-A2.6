@@ -1,7 +1,7 @@
 <?php
   function loadPage() {
     $controller = ($_GET["controller"] ?? "") ?: "home";
-    $allowedPages = ["home", "page1", "page2", "fruits", "fruitshow"];
+    $allowedPages = ["home", "page1", "page2", "fruits", "fruitshow", "fruitadd"];
     
     if (!in_array($controller, $allowedPages, true)) {
       http_response_code(404);
