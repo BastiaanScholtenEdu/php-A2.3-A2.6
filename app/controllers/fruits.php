@@ -20,6 +20,7 @@ function fruits()
 
   $output = "
     <h2>Fruits Database</h2>
+    <a href='?controller=fruitadd'>+ Fruit toevoegen</a><br><br>
     <table>
       <tr>
         <th>ID</th>
