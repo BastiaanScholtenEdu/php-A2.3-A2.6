@@ -32,9 +32,32 @@
             <a href='?controller=fruits'>Ga terug</a>
           </article>
         ";
+      } else {
+        $output = "
+          <article>
+            <h2>Fruit niet gevonden</h2>
+            <p>Er bestaat geen fruit record met de id {$_GET['id']}.</p>
+          </article>
+        ";
       }
-    } elseif ("") {
-
+    } elseif (!isset($_GET["id"])) {
+      $output = "
+        <article>
+          <h2>Id Ontbreekt</h2>
+          <p>Er is geen id opgegeven.</p>
+          <a href='?controller=fruits'>Ga terug</a>
+        </article>
+      ";
+      http_response_code(400);
+    } elseif (!is_numeric($_GET["id"])) {
+      $output = "
+        <article>
+          <h2>Id Ongeldig</h2>
+          <p>Gebruik een heel getal als id.</p>
+          <a href='?controller=fruits'>Ga terug</a>
+        </article>
+      ";
+      http_response_code(400);
     }
 
     return $output;
