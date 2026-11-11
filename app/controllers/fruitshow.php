@@ -5,7 +5,7 @@
     $output = "";
 
     if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
-      $result = getFromQuery($conn, "SELECT * FROM fruits WHERE id = {$_GET['id']}");
+      $result = performQuery($conn, "SELECT * FROM fruits WHERE id = {$_GET['id']}");
       if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $output = "

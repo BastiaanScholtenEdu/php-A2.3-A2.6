@@ -4,7 +4,7 @@ function fruits()
   require_once __DIR__ . "\..\core\database.php";
   $conn = connDb(); // Initialize database
 
-  $result = getFromQuery($conn, "SELECT id, name, color, sweetness, COUNT(*) OVER() AS totaal FROM fruits ORDER BY name ASC");
+  $result = performQuery($conn, "SELECT id, name, color, sweetness, COUNT(*) OVER() AS totaal FROM fruits ORDER BY name ASC");
   $length = 0;
   $table = "";
 
