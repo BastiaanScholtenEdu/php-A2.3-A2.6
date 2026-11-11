@@ -13,9 +13,8 @@
     return $mysqli;
   }
 
-  function getFromQuery(mysqli $conn, string $query) {
+  function performQuery(mysqli $conn, string $query) {
     $result = $conn -> query($query);
     return $result;
   }
-
 ?>
